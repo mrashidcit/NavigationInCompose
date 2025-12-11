@@ -57,6 +57,7 @@ dependencies {
     val nav_version = "2.9.6"
     // Jetpack Compose integration
     implementation("androidx.navigation:navigation-compose:$nav_version")
+    implementation("androidx.navigation:navigation-runtime-ktx:${nav_version}")
     // JSON serialization library, works with the Kotlin serialization plugin
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
 

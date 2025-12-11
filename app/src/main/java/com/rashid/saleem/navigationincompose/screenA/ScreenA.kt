@@ -31,7 +31,10 @@ fun ScreenA(
         Spacer(modifier = Modifier.height(20.dp))
         Button(
             onClick = {
-                navigateNext(Routes.ScreenB)
+                val route = Routes.ScreenB(
+                    userId = 20
+                )
+                navigateNext(route)
             }
         ) {
             Text("Next")

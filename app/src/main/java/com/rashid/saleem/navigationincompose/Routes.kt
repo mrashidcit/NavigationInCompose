@@ -8,7 +8,9 @@ sealed class Routes {
     data object ScreenA: Routes()
 
     @Serializable
-    data object ScreenB: Routes()
+    data class ScreenB(
+        val userId: Int
+    ): Routes()
 
 
 }
