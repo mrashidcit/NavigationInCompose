@@ -15,6 +15,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.rashid.saleem.navigationincompose.posts.detail.PostDetailScreen
+import com.rashid.saleem.navigationincompose.posts.listing.PostListingScreen
 import com.rashid.saleem.navigationincompose.screenA.ScreenA
 import com.rashid.saleem.navigationincompose.screenB.ScreenB
 import com.rashid.saleem.navigationincompose.ui.theme.NavigationInComposeTheme
@@ -34,7 +36,8 @@ class MainActivity : ComponentActivity() {
 
                         NavHost(
                             navController = navController,
-                            startDestination = Routes.ScreenA
+                            // startDestination = Routes.ScreenA
+                            startDestination = Routes.PostListing
                         ) {
 
                             composable<Routes.ScreenA> {
@@ -52,6 +55,24 @@ class MainActivity : ComponentActivity() {
                                     }
                                 )
                             }
+
+                            composable<Routes.PostListing> {
+                                PostListingScreen(
+                                    navigateNext = { route ->
+                                        navController.navigate(route)
+                                    }
+                                )
+                            }
+
+                            composable<Routes.PostDetail> {
+                                PostDetailScreen(
+                                    navigateBack = {
+                                        navController.navigateUp()
+                                    }
+                                )
+                            }
+
+
 
                         }
 

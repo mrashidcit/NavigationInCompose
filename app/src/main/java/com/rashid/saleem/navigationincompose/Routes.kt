@@ -12,5 +12,12 @@ sealed class Routes {
         val userId: Int
     ): Routes()
 
+    @Serializable
+    data object PostListing: Routes()
+
+    @Serializable
+    data object PostDetail: Routes()
+
+
 
 }
