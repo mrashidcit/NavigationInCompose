@@ -18,7 +18,7 @@ class PostsRepositoryImpl: PostsRepository {
     private val posts = dummyPostsList
 
     override fun get(id: String): Resource<PostModel> {
-        val item = posts.firstOrNull() ?: return Resource.Error(message = "Not found")
+        val item = posts.firstOrNull { it.id == id } ?: return Resource.Error(message = "Not found")
 
         return Resource.Success(item)
     }

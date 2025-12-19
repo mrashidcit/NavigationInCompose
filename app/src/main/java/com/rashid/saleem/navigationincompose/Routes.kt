@@ -2,6 +2,7 @@ package com.rashid.saleem.navigationincompose
 
 import kotlinx.serialization.Serializable
 
+@Serializable
 sealed class Routes {
 
     @Serializable
@@ -16,7 +17,9 @@ sealed class Routes {
     data object PostListing: Routes()
 
     @Serializable
-    data object PostDetail: Routes()
+    data class PostDetail(
+        val postId: String
+    ): Routes()
 
 
 

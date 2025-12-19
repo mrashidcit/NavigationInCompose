@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.rashid.saleem.navigationincompose.Routes
 import com.rashid.saleem.navigationincompose.posts.listing.components.PostListingContent
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
 @Composable
 fun PostListingScreen(
@@ -15,7 +17,8 @@ fun PostListingScreen(
     PostListingContent(
         posts = posts,
         itemOnClick = { post ->
-            navigateNext(Routes.PostDetail)
+
+            navigateNext(Routes.PostDetail(post.id))
         }
     )
 }
