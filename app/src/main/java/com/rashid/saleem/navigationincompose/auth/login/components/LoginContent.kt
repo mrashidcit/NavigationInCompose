@@ -1,6 +1,7 @@
 package com.rashid.saleem.navigationincompose.auth.login.components
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -20,6 +22,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -85,10 +88,12 @@ fun LoginContent(
             Text(
                 text = "Forgot Password ?",
                 modifier = Modifier
-//                    .clickable { // TODO() - Resolve this issue
-//                        onAction(LoginAction.SignUpOnClick)
-//                    }
-                ,
+                    .clickable(
+                        interactionSource = remember { MutableInteractionSource() },
+                        indication = rememberRipple()
+                    ) {
+                        onAction(LoginAction.ForgotPasswordOnClick)
+                    },
                 style = MaterialTheme.typography.bodyMedium
             )
         }
