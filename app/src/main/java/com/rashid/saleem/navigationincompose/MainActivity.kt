@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
@@ -40,6 +41,7 @@ class MainActivity : ComponentActivity() {
                             startDestination = Routes.PostListing
                         ) {
 
+
                             composable<Routes.ScreenA> {
                                 ScreenA(
                                     navigateNext = { route ->
@@ -47,7 +49,6 @@ class MainActivity : ComponentActivity() {
                                     }
                                 )
                             }
-
                             composable<Routes.ScreenB> {
                                 ScreenB(
                                     navigateBack = {
@@ -56,6 +57,11 @@ class MainActivity : ComponentActivity() {
                                 )
                             }
 
+
+
+                            /**
+                             *  ******** Posts *********
+                             */
                             composable<Routes.PostListing> {
                                 PostListingScreen(
                                     navigateNext = { route ->
@@ -63,7 +69,6 @@ class MainActivity : ComponentActivity() {
                                     }
                                 )
                             }
-
                             composable<Routes.PostDetail> {
                                 PostDetailScreen(
                                     navigateBack = {
@@ -71,6 +76,11 @@ class MainActivity : ComponentActivity() {
                                     }
                                 )
                             }
+
+
+                            /**
+                             *  ******** Auth *********
+                             */
 
 
 
