@@ -13,8 +13,8 @@ fun LoginScreen(
     LoginContent(
         onAction = { action ->
             when (action) {
-                LoginAction.ForgotPasswordOnClick -> TODO()
-                LoginAction.LogInOnClick -> TODO()
+                LoginAction.ForgotPasswordOnClick -> navigateNext(Routes.ForgotPassword)
+                LoginAction.LogInOnClick -> navigateNext(Routes.Home)
                 LoginAction.SignUpOnClick -> TODO()
             }
         }

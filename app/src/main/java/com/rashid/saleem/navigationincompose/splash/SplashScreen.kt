@@ -29,7 +29,7 @@ fun SplashScreen(
 
     LaunchedEffect(true) {
 
-        delay(4000L)
+        delay(3000L)
         navigateNext(Routes.Login)
     }
 
