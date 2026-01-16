@@ -1,10 +1,10 @@
-package com.rashid.saleem.navigationincompose.posts.detail
+package com.rashid.saleem.navigationincompose.home.postDetail
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.rashid.saleem.navigationincompose.posts.detail.components.PostDetailContent
+import com.rashid.saleem.navigationincompose.home.postDetail.components.PostDetailContent
 
 @Composable
 fun PostDetailScreen(

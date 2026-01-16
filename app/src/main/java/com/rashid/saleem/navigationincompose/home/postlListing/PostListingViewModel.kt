@@ -1,9 +1,8 @@
-package com.rashid.saleem.navigationincompose.posts.listing
+package com.rashid.saleem.navigationincompose.home.postlListing
 
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import com.rashid.saleem.navigationincompose.data.models.PostModel
-import com.rashid.saleem.navigationincompose.data.models.Resource
 import com.rashid.saleem.navigationincompose.data.repository.PostsRepositoryImpl
 
 class PostListingViewModel: ViewModel() {

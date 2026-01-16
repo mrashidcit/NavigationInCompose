@@ -1,4 +1,4 @@
-package com.rashid.saleem.navigationincompose.posts.detail.components
+package com.rashid.saleem.navigationincompose.home.postDetail.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
