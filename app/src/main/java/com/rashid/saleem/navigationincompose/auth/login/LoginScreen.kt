@@ -1,21 +1,23 @@
 package com.rashid.saleem.navigationincompose.auth.login
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import com.rashid.saleem.navigationincompose.Routes
+import com.rashid.saleem.navigationincompose.auth.AuthRoutes
+import com.rashid.saleem.navigationincompose.core.BaseRoute
+import com.rashid.saleem.navigationincompose.core.CoreRoutes
 import com.rashid.saleem.navigationincompose.auth.login.components.LoginContent
+import com.rashid.saleem.navigationincompose.home.HomeRoutes
 
 @Composable
 fun LoginScreen(
-    navigateNext: (Routes) -> Unit
+    navigateNext: (BaseRoute) -> Unit
 ) {
 
     LoginContent(
         onAction = { action ->
             when (action) {
-                LoginAction.ForgotPasswordOnClick -> navigateNext(Routes.ForgotPassword)
-                LoginAction.LogInOnClick -> navigateNext(Routes.Home)
-                LoginAction.SignUpOnClick -> TODO()
+                LoginAction.ForgotPasswordOnClick -> navigateNext(AuthRoutes.ForgotPassword)
+                LoginAction.LogInOnClick -> navigateNext(HomeRoutes.PostListing)
+                LoginAction.SignUpOnClick -> navigateNext(AuthRoutes.SignUp)
             }
         }
     )
