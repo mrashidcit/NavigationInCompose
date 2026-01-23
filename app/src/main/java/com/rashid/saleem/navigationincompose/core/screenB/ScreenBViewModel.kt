@@ -1,10 +1,10 @@
-package com.rashid.saleem.navigationincompose.screenB
+package com.rashid.saleem.navigationincompose.core.screenB
 
 import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.navigation.toRoute
-import com.rashid.saleem.navigationincompose.Routes
+import com.rashid.saleem.navigationincompose.core.CoreRoutes
 
 class ScreenBViewModel(
     private val savedStateHandle: SavedStateHandle
@@ -25,7 +25,7 @@ class ScreenBViewModel(
         /**
          * Approach 02:
          */
-        val params = savedStateHandle.toRoute<Routes.ScreenB>()
+        val params = savedStateHandle.toRoute<CoreRoutes.ScreenB>()
         Log.d(TAG, "init: userId = ${params.userId}")
 
 

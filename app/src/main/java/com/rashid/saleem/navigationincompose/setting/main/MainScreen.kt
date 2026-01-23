@@ -2,11 +2,13 @@ package com.rashid.saleem.navigationincompose.setting.main
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import com.rashid.saleem.navigationincompose.Routes
+import com.rashid.saleem.navigationincompose.core.BaseRoutes
+import com.rashid.saleem.navigationincompose.core.CoreRoutes
+import com.rashid.saleem.navigationincompose.setting.SettingRoutes
 
 @Composable
 fun MainScreen(
-    navigateNext: (Routes) -> Unit,
+    navigateNext: (BaseRoutes) -> Unit,
     navigateBack: () -> Unit
 ) {
     val uiState = remember {
@@ -17,11 +19,11 @@ fun MainScreen(
         uiState = uiState,
         itemOnClick = { option ->
             val route = when (option) {
-                SettingOptions.ManageSubscription -> Routes.ManageSubscription
-                SettingOptions.ChangeLanguage -> Routes.SelectLanguage
-                SettingOptions.FAQs -> Routes.FAQs
-                SettingOptions.ContactUs -> Routes.ContactUs
-                SettingOptions.AboutUs -> Routes.AboutUs
+                SettingOptions.ManageSubscription -> SettingRoutes.ManageSubscription
+                SettingOptions.ChangeLanguage -> SettingRoutes.SelectLanguage
+                SettingOptions.FAQs -> SettingRoutes.FAQs
+                SettingOptions.ContactUs -> SettingRoutes.ContactUs
+                SettingOptions.AboutUs -> SettingRoutes.AboutUs
             }
 
             navigateNext(route)

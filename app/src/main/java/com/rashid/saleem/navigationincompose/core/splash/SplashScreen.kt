@@ -1,4 +1,4 @@
-package com.rashid.saleem.navigationincompose.splash
+package com.rashid.saleem.navigationincompose.core.splash
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,20 +17,21 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.rashid.saleem.navigationincompose.core.BaseRoutes
 import com.rashid.saleem.navigationincompose.R
-import com.rashid.saleem.navigationincompose.Routes
+import com.rashid.saleem.navigationincompose.auth.AuthRoutes
 import com.rashid.saleem.navigationincompose.ui.theme.NavigationInComposeTheme
 import kotlinx.coroutines.delay
 
 @Composable
 fun SplashScreen(
-    navigateNext: (Routes) -> Unit
+    navigateNext: (BaseRoutes) -> Unit
 ) {
 
     LaunchedEffect(true) {
 
         delay(3000L)
-        navigateNext(Routes.Login)
+        navigateNext(AuthRoutes.Login)
     }
 
     Column(

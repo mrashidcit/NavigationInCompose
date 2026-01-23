@@ -1,7 +1,6 @@
-package com.rashid.saleem.navigationincompose.screenA
+package com.rashid.saleem.navigationincompose.core.screenA
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,11 +11,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.rashid.saleem.navigationincompose.Routes
+import com.rashid.saleem.navigationincompose.core.CoreRoutes
 
 @Composable
 fun ScreenA(
-    navigateNext: (Routes) -> Unit
+    navigateNext: (CoreRoutes) -> Unit
 ) {
 
     Column(
@@ -31,7 +30,7 @@ fun ScreenA(
         Spacer(modifier = Modifier.height(20.dp))
         Button(
             onClick = {
-                val route = Routes.ScreenB(
+                val route = CoreRoutes.ScreenB(
                     userId = 20
                 )
                 navigateNext(route)
