@@ -15,8 +15,10 @@ fun PostListingScreen(
     PostListingContent(
         posts = posts,
         itemOnClick = { post ->
-
             navigateNext(Routes.PostDetail(post.id))
+        },
+        openSetting = {
+            navigateNext(Routes.SettingMain)
         }
     )
 }

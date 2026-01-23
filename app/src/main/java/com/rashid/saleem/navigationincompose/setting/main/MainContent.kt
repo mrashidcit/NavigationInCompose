@@ -1,6 +1,10 @@
 package com.rashid.saleem.navigationincompose.setting.main
 
+import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.InteractionSource
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,6 +19,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
@@ -43,10 +48,14 @@ fun MainContent(
                 }
             }
         )
+
         LazyColumn(
             modifier = Modifier.weight(1f)
         ) {
             items(uiState) { option ->
+
+                val interactionSource = remember { MutableInteractionSource() }
+
                 Text(
                     text = option.name,
                     modifier = Modifier
@@ -55,7 +64,10 @@ fun MainContent(
                             vertical = 20.dp,
                             horizontal = 12.dp
                         )
-                        .clickable {
+                        .clickable(
+                            interactionSource = interactionSource,
+                            indication = LocalIndication.current
+                        ) {
                             itemOnClick(option)
                         }
                 )

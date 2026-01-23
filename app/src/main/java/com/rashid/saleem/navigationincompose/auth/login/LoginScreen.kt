@@ -14,8 +14,8 @@ fun LoginScreen(
         onAction = { action ->
             when (action) {
                 LoginAction.ForgotPasswordOnClick -> navigateNext(Routes.ForgotPassword)
-                LoginAction.LogInOnClick -> navigateNext(Routes.Home)
-                LoginAction.SignUpOnClick -> TODO()
+                LoginAction.LogInOnClick -> navigateNext(Routes.PostListing)
+                LoginAction.SignUpOnClick -> navigateNext(Routes.SignUp)
             }
         }
     )
