@@ -4,6 +4,9 @@ import com.rashid.saleem.navigationincompose.core.BaseRoutes
 import kotlinx.serialization.Serializable
 
 sealed class SettingRoutes: BaseRoutes {
+
+    @Serializable data object Setting: SettingRoutes()
+
     @Serializable
     data object Main: SettingRoutes()
     @Serializable

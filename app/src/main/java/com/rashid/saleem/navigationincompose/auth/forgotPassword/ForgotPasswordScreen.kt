@@ -20,11 +20,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.rashid.saleem.navigationincompose.auth.AuthViewModel
 import com.rashid.saleem.navigationincompose.ui.theme.NavigationInComposeTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ForgotPasswordScreen(
+    viewModel: AuthViewModel,
     navigateBack: () -> Unit
 ) {
 
@@ -83,6 +85,7 @@ fun ForgotPasswordScreen(
 
 }
 
+/**
 @Preview
 @Composable
 private fun ForgotPasswordScreenPreview() {
@@ -92,6 +95,7 @@ private fun ForgotPasswordScreenPreview() {
         }
     }
 }
+*/
 
 
 

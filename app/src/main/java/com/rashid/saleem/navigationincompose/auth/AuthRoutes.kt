@@ -5,6 +5,8 @@ import kotlinx.serialization.Serializable
 
 sealed class AuthRoutes: BaseRoutes {
 
+    @Serializable object Auth: AuthRoutes()
+
     @Serializable
     data object Login: AuthRoutes()
     @Serializable

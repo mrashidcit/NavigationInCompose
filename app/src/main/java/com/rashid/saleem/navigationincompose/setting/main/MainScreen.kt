@@ -5,9 +5,11 @@ import androidx.compose.runtime.remember
 import com.rashid.saleem.navigationincompose.core.BaseRoutes
 import com.rashid.saleem.navigationincompose.core.CoreRoutes
 import com.rashid.saleem.navigationincompose.setting.SettingRoutes
+import com.rashid.saleem.navigationincompose.setting.SettingViewModel
 
 @Composable
 fun MainScreen(
+    viewModel: SettingViewModel,
     navigateNext: (BaseRoutes) -> Unit,
     navigateBack: () -> Unit
 ) {

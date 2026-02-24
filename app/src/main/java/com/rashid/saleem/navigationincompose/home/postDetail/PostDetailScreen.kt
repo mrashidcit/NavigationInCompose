@@ -4,10 +4,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.rashid.saleem.navigationincompose.home.HomeViewModel
 import com.rashid.saleem.navigationincompose.home.postDetail.components.PostDetailContent
 
 @Composable
 fun PostDetailScreen(
+    homeViewModel: HomeViewModel,
     viewModel: PostDetailViewModel = viewModel(),
     navigateBack: () -> Unit
 ) {

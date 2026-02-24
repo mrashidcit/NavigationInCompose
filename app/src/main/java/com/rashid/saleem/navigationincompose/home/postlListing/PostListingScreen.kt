@@ -4,11 +4,13 @@ import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.rashid.saleem.navigationincompose.core.BaseRoutes
 import com.rashid.saleem.navigationincompose.home.HomeRoutes
+import com.rashid.saleem.navigationincompose.home.HomeViewModel
 import com.rashid.saleem.navigationincompose.home.postlListing.components.PostListingContent
 import com.rashid.saleem.navigationincompose.setting.SettingRoutes
 
 @Composable
 fun PostListingScreen(
+    homeViewModel: HomeViewModel,
     viewModel: PostListingViewModel = viewModel(),
     navigateNext: (BaseRoutes) -> Unit
 ) {

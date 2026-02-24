@@ -4,6 +4,11 @@ import com.rashid.saleem.navigationincompose.core.BaseRoutes
 import kotlinx.serialization.Serializable
 
 sealed class HomeRoutes: BaseRoutes {
+
+
+    @Serializable
+    data object Home: HomeRoutes()
+
     @Serializable
     data object PostListing: HomeRoutes()
     @Serializable
