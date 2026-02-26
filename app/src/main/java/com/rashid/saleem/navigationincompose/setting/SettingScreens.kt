@@ -6,6 +6,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.rashid.saleem.navigationincompose.core.extensions.sharedViewModel
 import com.rashid.saleem.navigationincompose.setting.aboutUs.AboutUsScreen
 import com.rashid.saleem.navigationincompose.setting.contactUs.ContactUsScreen
 import com.rashid.saleem.navigationincompose.setting.faqs.FAQScreen
@@ -20,10 +21,8 @@ fun NavGraphBuilder.settingScreens(navController: NavHostController) {
     ) {
         composable<SettingRoutes.Main> { backstackEntry ->
 
-            val parentRoute = remember(backstackEntry) {
-                navController.getBackStackEntry(SettingRoutes.Setting)
-            }
-            val viewModel: SettingViewModel = viewModel(parentRoute)
+            val viewModel: SettingViewModel = navController
+                .sharedViewModel(backstackEntry, SettingRoutes.Setting)
 
             MainScreen(
                 viewModel = viewModel,
@@ -37,10 +36,8 @@ fun NavGraphBuilder.settingScreens(navController: NavHostController) {
         }
         composable<SettingRoutes.SelectLanguage> {backstackEntry ->
 
-            val parentRoute = remember(backstackEntry) {
-                navController.getBackStackEntry(SettingRoutes.Setting)
-            }
-            val viewModel: SettingViewModel = viewModel(parentRoute)
+            val viewModel: SettingViewModel = navController
+                .sharedViewModel(backstackEntry, SettingRoutes.Setting)
 
             SelectLanguageScreen(
                 viewModel = viewModel,
@@ -50,10 +47,8 @@ fun NavGraphBuilder.settingScreens(navController: NavHostController) {
         }
         composable<SettingRoutes.ManageSubscription> {backstackEntry ->
 
-            val parentRoute = remember(backstackEntry) {
-                navController.getBackStackEntry(SettingRoutes.Setting)
-            }
-            val viewModel: SettingViewModel = viewModel(parentRoute)
+            val viewModel: SettingViewModel = navController
+                .sharedViewModel(backstackEntry, SettingRoutes.Setting)
 
             ManageSubscriptionScreen(
                 viewModel = viewModel,
@@ -63,10 +58,8 @@ fun NavGraphBuilder.settingScreens(navController: NavHostController) {
         }
         composable<SettingRoutes.FAQs> {backstackEntry ->
 
-            val parentRoute = remember(backstackEntry) {
-                navController.getBackStackEntry(SettingRoutes.Setting)
-            }
-            val viewModel: SettingViewModel = viewModel(parentRoute)
+            val viewModel: SettingViewModel = navController
+                .sharedViewModel(backstackEntry, SettingRoutes.Setting)
 
             FAQScreen(
                 viewModel = viewModel,
@@ -76,10 +69,8 @@ fun NavGraphBuilder.settingScreens(navController: NavHostController) {
         }
         composable<SettingRoutes.ContactUs> {backstackEntry ->
 
-            val parentRoute = remember(backstackEntry) {
-                navController.getBackStackEntry(SettingRoutes.Setting)
-            }
-            val viewModel: SettingViewModel = viewModel(parentRoute)
+            val viewModel: SettingViewModel = navController
+                .sharedViewModel(backstackEntry, SettingRoutes.Setting)
 
             ContactUsScreen(
                 viewModel = viewModel,
@@ -89,10 +80,8 @@ fun NavGraphBuilder.settingScreens(navController: NavHostController) {
         }
         composable<SettingRoutes.AboutUs> {backstackEntry ->
 
-            val parentRoute = remember(backstackEntry) {
-                navController.getBackStackEntry(SettingRoutes.Setting)
-            }
-            val viewModel: SettingViewModel = viewModel(parentRoute)
+            val viewModel: SettingViewModel = navController
+                .sharedViewModel(backstackEntry, SettingRoutes.Setting)
 
             AboutUsScreen(
                 viewModel = viewModel,

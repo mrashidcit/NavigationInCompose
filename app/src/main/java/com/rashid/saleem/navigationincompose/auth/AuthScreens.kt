@@ -1,7 +1,10 @@
 package com.rashid.saleem.navigationincompose.auth
 
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
@@ -9,7 +12,10 @@ import androidx.navigation.navigation
 import com.rashid.saleem.navigationincompose.auth.forgotPassword.ForgotPasswordScreen
 import com.rashid.saleem.navigationincompose.auth.login.LoginScreen
 import com.rashid.saleem.navigationincompose.auth.signUp.SignUpScreen
+import com.rashid.saleem.navigationincompose.core.extensions.sharedViewModel
 import com.rashid.saleem.navigationincompose.home.HomeRoutes
+
+
 
 fun NavGraphBuilder.authScreens(navController: NavHostController) {
 
@@ -19,11 +25,8 @@ fun NavGraphBuilder.authScreens(navController: NavHostController) {
 
         composable<AuthRoutes.Login> { backstackEntry ->
 
-            val parentRoute = remember(backstackEntry) {
-                navController.getBackStackEntry(AuthRoutes.Auth)
-            }
-
-            val viewModel: AuthViewModel = viewModel(parentRoute)
+            val viewModel: AuthViewModel = navController
+                .sharedViewModel(backstackEntry, AuthRoutes.Auth)
 
             LoginScreen(
                 viewModel = viewModel,
@@ -39,11 +42,8 @@ fun NavGraphBuilder.authScreens(navController: NavHostController) {
         }
         composable<AuthRoutes.SignUp> {backstackEntry ->
 
-            val parentRoute = remember(backstackEntry) {
-                navController.getBackStackEntry(AuthRoutes.Auth)
-            }
-
-            val viewModel: AuthViewModel = viewModel(parentRoute)
+            val viewModel: AuthViewModel = navController
+                .sharedViewModel(backstackEntry, AuthRoutes.Auth)
 
             SignUpScreen(
                 viewModel = viewModel,
@@ -53,11 +53,8 @@ fun NavGraphBuilder.authScreens(navController: NavHostController) {
         }
         composable<AuthRoutes.ForgotPassword> {backstackEntry ->
 
-            val parentRoute = remember(backstackEntry) {
-                navController.getBackStackEntry(AuthRoutes.Auth)
-            }
-
-            val viewModel: AuthViewModel = viewModel(parentRoute)
+            val viewModel: AuthViewModel = navController
+                .sharedViewModel(backstackEntry, AuthRoutes.Auth)
 
             ForgotPasswordScreen(
                 viewModel = viewModel,

@@ -6,6 +6,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.rashid.saleem.navigationincompose.core.extensions.sharedViewModel
 import com.rashid.saleem.navigationincompose.home.postDetail.PostDetailScreen
 import com.rashid.saleem.navigationincompose.home.postlListing.PostListingScreen
 
@@ -16,11 +17,8 @@ fun NavGraphBuilder.homeScreens(navController: NavHostController) {
     ) {
         composable<HomeRoutes.PostListing> { backStackEntry ->
 
-            val parentRoute = remember(backStackEntry) {
-                navController.getBackStackEntry(HomeRoutes.Home)
-            }
-
-            val homeViewModel: HomeViewModel = viewModel(parentRoute)
+            val homeViewModel: HomeViewModel = navController
+                .sharedViewModel(backStackEntry, HomeRoutes.Home)
 
             PostListingScreen(
                 homeViewModel = homeViewModel,
@@ -31,11 +29,8 @@ fun NavGraphBuilder.homeScreens(navController: NavHostController) {
         }
         composable<HomeRoutes.PostDetail> { backStackEntry ->
 
-            val parentRoute = remember(backStackEntry) {
-                navController.getBackStackEntry(HomeRoutes.Home)
-            }
-
-            val homeViewModel: HomeViewModel = viewModel(parentRoute)
+            val homeViewModel: HomeViewModel = navController
+                .sharedViewModel(backStackEntry, HomeRoutes.Home)
 
             PostDetailScreen(
                 homeViewModel = homeViewModel,
