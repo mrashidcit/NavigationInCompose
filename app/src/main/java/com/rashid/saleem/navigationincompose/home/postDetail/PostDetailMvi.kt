@@ -9,6 +9,6 @@ sealed interface PostDetailAction {
 }
 
 sealed interface PostDetailEvent {
-    data object NavigateBack: PostDetailEvent
+    data class NavigateBack(val params: Bundle): PostDetailEvent
     data class ShowToast(val message: String): PostDetailEvent
 }

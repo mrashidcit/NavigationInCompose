@@ -22,6 +22,7 @@ fun NavGraphBuilder.homeScreens(navController: NavHostController) {
 
             PostListingScreen(
                 homeViewModel = homeViewModel,
+                backStackEntry = backStackEntry,
                 navigateNext = { route ->
                     navController.navigate(route)
                 }
@@ -34,7 +35,16 @@ fun NavGraphBuilder.homeScreens(navController: NavHostController) {
 
             PostDetailScreen(
                 homeViewModel = homeViewModel,
-                navigateBack = {
+                navigateBack = { params ->
+
+                    navController
+                        .previousBackStackEntry
+                        ?.savedStateHandle
+                        ?.set(
+                            "refresh-listing",
+                            params.getBoolean("refresh-listing", false)
+                        )
+
                     navController.navigateUp()
                 }
             )

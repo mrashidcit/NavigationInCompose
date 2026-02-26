@@ -1,5 +1,6 @@
 package com.rashid.saleem.navigationincompose.home.postDetail
 
+import android.os.Bundle
 import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -15,7 +16,7 @@ import kotlinx.coroutines.flow.collectLatest
 fun PostDetailScreen(
     homeViewModel: HomeViewModel,
     viewModel: PostDetailViewModel = viewModel(),
-    navigateBack: () -> Unit
+    navigateBack: (Bundle) -> Unit
 ) {
     val post by viewModel.post.collectAsStateWithLifecycle()
     val context = LocalContext.current
@@ -23,7 +24,7 @@ fun PostDetailScreen(
     LaunchedEffect(true) {
         viewModel.events.collectLatest { event ->
             when (event) {
-                PostDetailEvent.NavigateBack -> navigateBack()
+                is PostDetailEvent.NavigateBack -> navigateBack(event.params)
                 is PostDetailEvent.ShowToast -> Toast
                     .makeText(context, event.message, Toast.LENGTH_LONG)
                     .show()

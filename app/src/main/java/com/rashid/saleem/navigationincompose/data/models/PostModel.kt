@@ -20,7 +20,7 @@ data class PostModel(
     }
 }
 
-val dummyPostsList = listOf(
+val dummyPostsList = mutableListOf(
     PostModel(
         id = "101",
         title = "Exploring the Wonders of the Deep Sea",
